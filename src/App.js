@@ -1,15 +1,24 @@
 import React, { useState } from 'react'
 import './App.css'
-import Advanced from './examples/Advanced'
+import { BrowserRouter, Route, Switch} from "react-router-dom";
 
-function App () {
-  const [showAdvanced, setShowAdvanced] = useState(true)
+//template
+import Default from './example/Default';
+import Login from './example/Login';
+// import { render } from '@testing-library/react';
 
+class App extends React.Component {
+  render(){
   return (
-    <div className='app'>
-      <Advanced />
-    </div>
-  )
+    <BrowserRouter>
+      <switch>
+        <Route path="/" component={Default} />
+        <Route exact path="/login" component={Login} />
+
+      </switch>
+    </BrowserRouter>
+  );
+  }
 }
 
-export default App
+export default App;

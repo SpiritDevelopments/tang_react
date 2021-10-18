@@ -6,7 +6,7 @@
   min-height: 100vh;
   overflow: hidden;
   /* background: linear-gradient(#fff, #999); */
-  background: linear-gradient(#e66465, #9198e5);
+  background: linear-gradient(#9198e5, #ffffff);
 }
 
 #root>div {
@@ -14,6 +14,37 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+footer{
+  width: 100%;
+  background-color: white;
+  color: black;
+  text-align: center;
+  padding: 3px 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+footer.link{
+  color: #000;
+  background-color: transparent;
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+}
+
+.sankou{
+  font-size: 10px;
+}
+
+header{
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-color: rgb(113, 177, 238);
 }
 
 .app>div {
@@ -32,7 +63,7 @@
 }
 
 h1 {
-  font-family: 'Damion', cursive;
+  font-family: 'Segoe UI', cursive;
   color: #fff;
   text-shadow: 0px 0px 60px 0px rgba(0,0,0,0.30);
 }
@@ -57,7 +88,7 @@ h2 {
   width: 80vw;
   max-width: 260px;
   height: 300px;
-  box-shadow: 0px 0px 60px 0px rgba(0,0,0,0.30);
+  /* box-shadow: 0px 0px 60px 0px rgba(0,0,0,0.30); */
   border-radius: 20px;
   background-size: cover;
   background-position: center;
@@ -83,12 +114,15 @@ h2 {
 
 .card .ex{
   position: absolute;
+  text-align: left;
   top: 23px;
+  left: 10px;
 }
 
 .card .ans{
   position: absolute;
   top: 250px;
+  left: 25px;
 }
 
 .infoText {
@@ -123,6 +157,20 @@ h2 {
 
 .buttons button:hover {
   transform: scale(1.05);
+}
+
+summary{
+  cursor: pointer;
+  width: 100%;
+  background-color:white;
+}
+
+.accord{
+  width: 100%;
+  position: absolute;
+  top: 22px;
+  left: 0;
+  background-color: #9198e5;
 }
 
 @keyframes popup {

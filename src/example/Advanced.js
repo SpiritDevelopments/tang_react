@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react'
 // import TinderCard from '../react-tinder-card/index'
 import TinderCard from 'react-tinder-card'
+import Countdown from 'react-countdown'
 
 const db = [
   {
@@ -23,6 +24,10 @@ const db = [
   }
 ]
 
+function Janre(props){
+  
+}
+
 const alreadyRemoved = []
 let charactersState = db // This fixes issues with updating characters state forcing it to use the current state and not the state that was active when the card was created.
 
@@ -40,43 +45,52 @@ function Advanced () {
 
   const outOfFrame = (name) => {
     console.log(name + ' left the screen!')
-    charactersState = charactersState.filter(character => character.name !== name)
+    charactersState = charactersState.filter(character => character.no !== name)
     setCharacters(charactersState)
   }
 
   const swipe = (dir) => {
-    const cardsLeft = characters.filter(person => !alreadyRemoved.includes(person.name))
+    const cardsLeft = characters.filter(person => !alreadyRemoved.includes(person.no))
     if (cardsLeft.length) {
-      const toBeRemoved = cardsLeft[cardsLeft.length - 1].name // Find the card object to be removed
-      const index = db.map(person => person.name).indexOf(toBeRemoved) // Find the index of which to make the reference to
+      const toBeRemoved = cardsLeft[cardsLeft.length - 1].no // Find the card object to be removed
+      const index = db.map(person => person.no).indexOf(toBeRemoved) // Find the index of which to make the reference to
       alreadyRemoved.push(toBeRemoved) // Make sure the next card gets removed next time if this card do not have time to exit the screen
       childRefs[index].current.swipe(dir) // Swipe the card!
     }
   }
 
+  const timer = () =>{
+    var time = Date.now() +5000;
+    return ;
+  }
+
   return (
+    <div className='app'>
     <div>
       <link href='https://fonts.googleapis.com/css?family=Damion&display=swap' rel='stylesheet' />
       <link href='https://fonts.googleapis.com/css?family=Alatsi&display=swap' rel='stylesheet' />
-      <h1>tender</h1>
+      <h1>分野表示</h1>
       <div className='cardContainer'>
         {characters.map((character, index) =>
-          <TinderCard ref={childRefs[index]} className='swipe' key={character.name} onSwipe={(dir) => swiped(dir, character.name)} onCardLeftScreen={() => outOfFrame(character.name)}>
+          <TinderCard ref={childRefs[index]} className='swipe' key={character.no} onSwipe={(dir) => swiped(dir, character.name)} onCardLeftScreen={() => outOfFrame(character.name)}>
             <div style={{ backgroundImage: 'url(' + character.url + ')' }} className='card'>
               <h3>{character.no}</h3>
               <h3 className='ex'>{character.ex}</h3>
-
               <h3 className='ans'>{character.ans}</h3>
               
             </div>
           </TinderCard>
         )}
       </div>
-      <div className='buttons'>
-        <button onClick={() => swipe('left')}>LEFT is NG</button>
-        <button onClick={() => swipe('right')}>RIGHT is OK</button>
+      <div>
+        <h2><Countdown date={() => timer()} /></h2>
       </div>
-      {lastDirection ? <h2 key={lastDirection} className='infoText'>You swiped {lastDirection}</h2> : <h2 className='infoText'></h2>}
+      <div className='buttons'>
+        <button onClick={() => swipe('left')}>⇦ まだ</button>
+        <button onClick={() => swipe('right')}>覚えた ⇨</button>
+      </div>
+      {/* {lastDirection ? <h2 key={lastDirection} className='infoText'>{lastDirection}</h2> : <h2 className='infoText'></h2>} */}
+    </div>
     </div>
   )
 }
