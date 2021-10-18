@@ -5,6 +5,18 @@ import Countdown from 'react-countdown'
 
 const db = [
   {
+    no: 'Q05',
+    ex: '攻撃者が攻撃対象者のコンピュータに侵入した後に用いるツールを集めたパッケージ',
+    ans: 'rootkit',
+    url: './img/paper.png'
+  },
+  {
+    no: 'Q04',
+    ex: '攻撃対象のユーザがよく利用するWebサイトを不正に改ざんすることで、ウイルスに感染させようとする攻撃',
+    ans: '水飲み場型攻撃',
+    url: './img/paper.png'
+  },
+  {
     no: 'Q03',
     ex: '特定の企業などの組織を狙った攻撃。関係者を装ってウイルスメールを送付するなどして相手のPCをウイルスに感染させる。',
     ans: '標的型攻撃',
@@ -61,7 +73,7 @@ function Advanced () {
 
   const timer = () =>{
     var time = Date.now() +5000;
-    return ;
+    return time;
   }
 
   return (
@@ -69,7 +81,7 @@ function Advanced () {
     <div>
       <link href='https://fonts.googleapis.com/css?family=Damion&display=swap' rel='stylesheet' />
       <link href='https://fonts.googleapis.com/css?family=Alatsi&display=swap' rel='stylesheet' />
-      <h1>分野表示</h1>
+      <h1>SC</h1>
       <div className='cardContainer'>
         {characters.map((character, index) =>
           <TinderCard ref={childRefs[index]} className='swipe' key={character.no} onSwipe={(dir) => swiped(dir, character.name)} onCardLeftScreen={() => outOfFrame(character.name)}>
@@ -83,7 +95,7 @@ function Advanced () {
         )}
       </div>
       <div>
-        <h2><Countdown date={() => timer()} /></h2>
+        <h2><Countdown date={Date.now() + 5000} /></h2>
       </div>
       <div className='buttons'>
         <button onClick={() => swipe('left')}>⇦ まだ</button>
