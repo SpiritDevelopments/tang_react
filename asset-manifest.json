@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/tang_react/static/css/main.d41a7f56.chunk.css",
+    "main.js": "/tang_react/static/js/main.a03ad94d.chunk.js",
+    "main.js.map": "/tang_react/static/js/main.a03ad94d.chunk.js.map",
+    "runtime-main.js": "/tang_react/static/js/runtime-main.f7ff84ab.js",
+    "runtime-main.js.map": "/tang_react/static/js/runtime-main.f7ff84ab.js.map",
+    "static/js/2.8bfe9834.chunk.js": "/tang_react/static/js/2.8bfe9834.chunk.js",
+    "static/js/2.8bfe9834.chunk.js.map": "/tang_react/static/js/2.8bfe9834.chunk.js.map",
+    "index.html": "/tang_react/index.html",
+    "static/css/main.d41a7f56.chunk.css.map": "/tang_react/static/css/main.d41a7f56.chunk.css.map",
+    "static/js/2.8bfe9834.chunk.js.LICENSE.txt": "/tang_react/static/js/2.8bfe9834.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f7ff84ab.js",
+    "static/js/2.8bfe9834.chunk.js",
+    "static/css/main.d41a7f56.chunk.css",
+    "static/js/main.a03ad94d.chunk.js"
+  ]
+}
